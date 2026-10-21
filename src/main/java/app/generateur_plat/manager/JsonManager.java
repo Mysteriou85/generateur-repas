@@ -8,6 +8,7 @@ import tools.jackson.databind.node.JsonNodeFactory;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -25,27 +26,29 @@ public class JsonManager {
         ObjectMapper mapper = new ObjectMapper();
         Path dossier = Path.of("src/main/resources/json");
         ArrayNode perimetreFinal = JsonNodeFactory.instance.arrayNode();
+        List<JsonNode> listJsonFile = new ArrayList<>();
 
-        try (Stream<Path> fichiers = Files.list(dossier)) {
-            fichiers
-                    .filter(Files::isRegularFile)
-                    .filter(f -> f.toString().endsWith(".json"))
-                    .forEach(fichier -> {
-                        try {
-                            JsonNode root = mapper.readTree(fichier.toFile());
-                            JsonNode perimetre = perimetreJsonTypeSpecifique(root, type, colonneObligatoire);
-                            // L'on évite les nulls pointer en ajoutant des valeurs null dans le perimetreFinal
-                            if(perimetre != null) {
-                                for (JsonNode entiteIndividuel : perimetre){
-                                    perimetreFinal.add(entiteIndividuel);
-                                }
-                            }
-                        } catch (Exception e) {
-                            System.err.println(e.getMessage());
-                        }
+        // L'on rentre dans le dossier et récupère tout les fichiers JSON
+        try(Stream<Path> paths = Files.walk(dossier)) {
+            paths.filter(Files::isRegularFile)
+                    .filter(path -> path.toString().endsWith(".json"))
+                    .forEach(path -> {
+                        listJsonFile.add(mapper.readTree(path.toFile()));
                     });
+
         } catch(IOException oiErr) {
             System.err.println(oiErr.getMessage());
+        }
+
+        // L'on scan chaque dossier JSON pour en récupéré lesdonnée et les ajoutés au périmètre si ils correspondent à l'attendu.
+        for (JsonNode root : listJsonFile) {
+            JsonNode perimetre = perimetreJsonTypeSpecifique(root, type, colonneObligatoire);
+            // L'on évite les nulls pointer en ajoutant des valeurs null dans le perimetreFinal
+            if(perimetre != null) {
+                for (JsonNode entiteIndividuel : perimetre){
+                    perimetreFinal.add(entiteIndividuel);
+                }
+            }
         }
 
         return perimetreFinal;

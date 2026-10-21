@@ -11,8 +11,13 @@ public class IngredientCtrl {
     IngredientMgr ingredientMgr = new IngredientMgr();
 
     @GetMapping("/all")
-    public String getAllIngredient() {
-        return ingredientMgr.getDataJsonEntite().asObject().asString();
+    public Object getAllIngredientJson() {
+        return ingredientMgr.getDataJsonEntite();
+    }
+
+    @GetMapping("/random")
+    public Object getRandomIngredientJson() {
+        return ingredientMgr.getRandomIngredient();
     }
 
 }
