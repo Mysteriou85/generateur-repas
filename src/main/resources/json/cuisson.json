@@ -1,0 +1,44 @@
+[
+  {
+    "id": "grille",
+    "type": "PREPARATION",
+    "cuisson":"Grillé",
+    "accompagnement": false
+  },
+  {
+    "id": "bouilli",
+    "type": "PREPARATION",
+    "cuisson":"Bouilli",
+    "accompagnement": false
+  },
+  {
+    "id": "arrose",
+    "type": "CUISSON",
+    "cuisson":"Arrosé",
+    "accompagnement": true
+  },
+  {
+    "id": "badigeonne",
+    "type": "CUISSON",
+    "cuisson":"Bagigeonné",
+    "accompagnement": true
+  },
+  {
+    "id": "saute",
+    "type": "CUISSON",
+    "cuisson":"Sauté",
+    "accompagnement": false
+  },
+  {
+    "id": "braise",
+    "type": "CUISSON",
+    "cuisson":"Braisé",
+    "accompagnement": false
+  },
+  {
+    "id": "mijote",
+    "type": "CUISSON",
+    "cuisson":"Mijoté",
+    "accompagnement": true
+  }
+]

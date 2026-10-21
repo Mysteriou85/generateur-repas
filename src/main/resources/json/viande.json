@@ -1,0 +1,26 @@
+[
+  {
+    "id": "steak",
+    "type": "INGREDIENT",
+    "nom":"Steak",
+    "typeIngredient": "viande",
+    "sousTypeIngredient": "viande_rouge",
+    "saveur": "neutre"
+  },
+  {
+    "id": "blanc_poulet",
+    "type": "INGREDIENT",
+    "nom":"Blanc de poulet",
+    "typeIngredient": "viande",
+    "sousTypeIngredient": "viande_blanche",
+    "saveur": "neutre"
+  },
+  {
+    "id": "filet",
+    "type": "INGREDIENT",
+    "nom":"Filet",
+    "typeIngredient": "viande",
+    "sousTypeIngredient": "poisson",
+    "saveur": "neutre"
+  }
+]

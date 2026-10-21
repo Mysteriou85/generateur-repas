@@ -1,0 +1,42 @@
+[
+  {
+    "id": "artichaut",
+    "type": "INGREDIENT",
+    "nom":"Artichaut",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_fleur",
+    "saveur": "neutre"
+  },
+  {
+    "id": "chou_fleur",
+    "type": "INGREDIENT",
+    "nom":"Chou_fleur",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_fleur",
+    "saveur": "neutre"
+  },
+  {
+    "id": "brocoli",
+    "type": "INGREDIENT",
+    "nom":"Brocoli",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_fleur",
+    "saveur": "neutre"
+  },
+  {
+    "id": "chou",
+    "type": "INGREDIENT",
+    "nom":"Chou",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_feuille",
+    "saveur": "neutre"
+  },
+  {
+    "id": "epinard",
+    "type": "INGREDIENT",
+    "nom":"epinard",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_feuille",
+    "saveur": "neutre"
+  }
+]

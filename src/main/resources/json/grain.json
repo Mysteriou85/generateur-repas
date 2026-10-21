@@ -1,0 +1,42 @@
+[
+  {
+    "id": "haricot",
+    "type": "INGREDIENT",
+    "nom":"Haricot",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_graine",
+    "saveur": "neutre"
+  },
+  {
+    "id": "petit_pois",
+    "type": "INGREDIENT",
+    "nom":"Petit pois",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_graine",
+    "saveur": "neutre"
+  },
+  {
+    "id": "mais",
+    "type": "INGREDIENT",
+    "nom":"Maïs",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_graine",
+    "saveur": "neutre"
+  },
+  {
+    "id": "feve",
+    "type": "INGREDIENT",
+    "nom":"Fève",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_graine",
+    "saveur": "neutre"
+  },
+  {
+    "id": "lentille",
+    "type": "INGREDIENT",
+    "nom":"Lentille",
+    "typeIngredient": "legume",
+    "sousTypeIngredient": "legume_graine",
+    "saveur": "neutre"
+  }
+]
