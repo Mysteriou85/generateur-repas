@@ -22,4 +22,13 @@ public class IngredientSrv {
         return listEntite;
     }
 
+    /**
+     * TODO faire un véritable contrôle, c'est qu'une excuse pour le moment
+     * @param ingredient Ingredient
+     * @return boolean
+     */
+    public boolean controleIngredient(Ingredient ingredient) {
+        return !ingredient.getId().isEmpty() && !ingredient.getType().isEmpty() && "INGREDIENT".equals(ingredient.getType());
+    }
+
 }
