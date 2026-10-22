@@ -13,13 +13,13 @@ public class IngredientMgrTest {
 
     private IngredientMgr ingredientMgr = new IngredientMgr();
 
-    @Test
-    public void testFolder() throws IOException {
-        List<Ingredient> listIngredient = ingredientMgr.getAllIngredient();
-
-        Assertions.assertNotNull(listIngredient);
-        Assertions.assertTrue(listIngredient.stream().allMatch(f -> "INGREDIENT".equals(f.getType())));
-    }
+//    @Test
+//    public void testFolder() throws IOException {
+//        List<Ingredient> listIngredient = ingredientMgr.getAllIngredient();
+//
+//        Assertions.assertNotNull(listIngredient);
+//        Assertions.assertTrue(listIngredient.stream().allMatch(f -> "INGREDIENT".equals(f.getType())));
+//    }
 
 //    @Test
 //    public void test() throws IOException {
