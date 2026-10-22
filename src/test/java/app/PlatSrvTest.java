@@ -5,14 +5,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import app.generateur_plat.service.PlatSrv;
 
-import java.io.IOException;
-
 public class PlatSrvTest {
 
     PlatSrv platSrv = new PlatSrv();
 
     @Test
-    public void creationPlatTest() throws IOException {
+    public void creationPlatTest() {
         Plat plat = platSrv.generationPlat(null);
         String description = platSrv.descriptionPlat(plat);
         Assertions.assertNotNull(plat);
@@ -20,7 +18,7 @@ public class PlatSrvTest {
     }
 
     @Test
-    public void creationPlatTestAvecZeroComposition() throws IOException {
+    public void creationPlatTestAvecZeroComposition() {
         Plat plat = platSrv.generationPlat(0);
         String description = platSrv.descriptionPlat(plat);
         Assertions.assertNotNull(plat);
@@ -28,7 +26,7 @@ public class PlatSrvTest {
     }
 
     @Test
-    public void creationPlatTestAvecComposition() throws IOException {
+    public void creationPlatTestAvecComposition() {
         Plat plat = platSrv.generationPlat(3);
         String description = platSrv.descriptionPlat(plat);
         Assertions.assertNotNull(plat);
