@@ -11,12 +11,12 @@ public class PlatCtrl {
     PlatSrv platSrv = new PlatSrv();
 
     @GetMapping()
-    public String getPlat() throws IOException {
+    public String getPlat() {
         return platSrv.descriptionPlat(platSrv.generationPlat(null));
     }
 
     @GetMapping("/{id}")
-    public String getPlatCompose(@PathVariable Integer id) throws IOException {
+    public String getPlatCompose(@PathVariable Integer id) {
         return platSrv.descriptionPlat(platSrv.generationPlat(id));
     }
 

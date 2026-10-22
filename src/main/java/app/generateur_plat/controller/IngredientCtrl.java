@@ -19,7 +19,7 @@ public class IngredientCtrl {
 
     @GetMapping("/random")
     public Object getRandomIngredientJson() {
-        return ingredientMgr.getRandomIngredient();
+        return ingredientSrv.getRandomIngredient();
     }
 
     @PostMapping("/add")
