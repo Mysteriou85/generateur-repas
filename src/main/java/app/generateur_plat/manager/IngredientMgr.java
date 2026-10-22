@@ -1,20 +1,12 @@
 package app.generateur_plat.manager;
 
-import app.generateur_plat.entite.entiteJson.Cuisson;
-import app.generateur_plat.service.IngredientSrv;
-import app.generateur_plat.entite.entiteJson.Ingredient;
 import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.ObjectMapper;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Stream;
+import java.util.Map;
 
-public class IngredientMgr implements InterfaceJsonMgr {
+public class IngredientMgr extends JsonManager implements InterfaceJsonMgr {
 
     // Variable
     static final private List<String> colonneObligatoireSpecifique = List.of("nom", "typeIngredient", "sousTypeIngredient", "saveur");
@@ -22,6 +14,18 @@ public class IngredientMgr implements InterfaceJsonMgr {
 
     @Override
     public JsonNode getDataJsonEntite() {
-        return jsonManager.getDataJson(TYPE, colonneObligatoireSpecifique);
+        return getDataJson(TYPE, colonneObligatoireSpecifique, null);
+    }
+
+    @Override
+    public JsonNode getDataJsonEntiteAvecRecherche(Map<String, String> valeurRecherche) {
+        return getDataJson(TYPE, colonneObligatoireSpecifique, valeurRecherche);
+    }
+
+    public JsonNode getIngredientById(String id) {
+        Map<String, String> valeurRecherche = new HashMap<>();
+        valeurRecherche.put("id", id);
+
+        return getDataJsonEntiteAvecRecherche(valeurRecherche);
     }
 }

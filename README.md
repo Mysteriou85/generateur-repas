@@ -8,5 +8,10 @@ Liste de requête GET et POST.
 | ----- | ------- | ----------- |
 | GET | /plat |  Récupère une description d'un plat sans composant ajouté. |
 | GET | /plat/{nbre} | Récupère une description d'un plat avec un nombre de composant ajouté définie. |
+| POST | /ingredient/ | Envois un ingrédient. (ne fait rien) |
 | GET | /ingredient/all | Récupère la totalité des ingrédients au format JSON. | 
 | GET | /ingredient/random | Récupère un ingrédient aléatoire au format JSON. |
+| GET | /ingredient/id/{id} | Récupère un ingrédient par son id. |
+| GET | /cuisson/all | Récupère la totalité des cuissons au format JSON. | 
+| GET | /cuisson/random | Récupère une cuisson aléatoire au format JSON. |
+| GET | /cuisson/id/{id} | Récupère une cuisson par son id. |
