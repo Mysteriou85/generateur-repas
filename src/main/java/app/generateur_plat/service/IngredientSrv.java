@@ -66,4 +66,12 @@ public class IngredientSrv {
     public boolean controleIngredient(Ingredient ingredient) {
         return !ingredient.getId().isEmpty() && !ingredient.getType().isEmpty() && "INGREDIENT".equals(ingredient.getType());
     }
+
+    public JsonNode findAllIngredientJson() {
+        return ingredientMgr.getDataJsonEntite();
+    }
+
+    public JsonNode findIngredientById(String id) {
+        return ingredientMgr.getIngredientById(id);
+    }
 }

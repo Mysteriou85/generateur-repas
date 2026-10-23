@@ -38,7 +38,7 @@ public class CuissonSrv {
 
     /**
      * Récupère une cuisson aléatoire partie tout celle existant en donnée
-     * @return
+     * @return Cuisson
      */
     public Cuisson getRandomCuisson() {
         Random rand = new Random();
@@ -55,5 +55,13 @@ public class CuissonSrv {
     public Cuisson choseRandomCuisson(List<Cuisson> listCuisson) {
         Random rand = new Random();
         return listCuisson.get(rand.nextInt(0, listCuisson.size()));
+    }
+
+    public JsonNode findAllCuissonJson() {
+        return cuissonMgr.getDataJsonEntite();
+    }
+
+    public JsonNode findCuissonById(String id) {
+        return cuissonMgr.getCuissonById(id);
     }
 }
